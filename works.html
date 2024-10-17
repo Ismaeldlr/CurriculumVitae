@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Works</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <style>
+    .portfolio-item {
+      transition: box-shadow 0.3s ease;
+    }
+    .portfolio-item:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+    .image-overlay {
+      transition: opacity 0.3s ease;
+    }
+    .image-overlay:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <!-- Navbar -->
+  <nav class="bg-white shadow-lg">
+    <div class="container mx-auto px-4 py-2">
+      <ul class="flex justify-center space-x-4">
+        <li><a href="index.html" class="text-gray-700">About</a></li>
+        <li><a href="services.html" class="text-gray-700">Services</a></li>
+        <li><a href="works.html" class="text-gray-700">Works</a></li>
+        <li><a href="contact.html" class="text-gray-700">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Sección de Trabajos -->
+  <section class="container mx-auto py-10">
+    <div class="flex flex-wrap md:px-4" id="portfolio-grid">
+      <!-- Los items del portafolio serán generados aquí -->
+    </div>
+  </section>
+
+  <script>
+    // Datos del portafolio (basado en tus proyectos reales)
+    const portfolioData = [
+      {
+        id: 1,
+        image: "https://via.placeholder.com/400x300", // Reemplaza con la ruta correcta
+        title: "Sistema de Automatización de Pruebas",
+        link: "#",
+        description: "Automatización de pruebas con Selenium, Cucumber y NUnit para asegurar la calidad en proyectos complejos."
+      },
+      {
+        id: 2,
+        image: "https://via.placeholder.com/400x300", // Reemplaza con la ruta correcta
+        title: "Sistema de Gestión de Inventarios",
+        link: "#",
+        description: "Desarrollo de sistemas eficientes para gestionar inventarios de forma automatizada y precisa, con UML y patrones de diseño."
+      },
+      {
+        id: 3,
+        image: "https://via.placeholder.com/400x300", // Reemplaza con la ruta correcta
+        title: "Blog sobre Sustentabilidad en Ingeniería",
+        link: "#",
+        description: "Creación de un blog colaborativo sobre temas de sustentabilidad, cubriendo los ODS y problemáticas como el hambre y la contaminación."
+      },
+      {
+        id: 4,
+        image: "https://via.placeholder.com/400x300", // Reemplaza con la ruta correcta
+        title: "Sistema de Gestión de Pedidos para Restaurantes",
+        link: "#",
+        description: "Desarrollo de un sistema para la gestión eficiente de pedidos, incluyendo reservas, pagos y administración de clientes."
+      }
+    ];
+
+    // Seleccionar el contenedor del portafolio
+    const portfolioGrid = document.getElementById('portfolio-grid');
+
+    // Generar HTML dinámico para cada item del portafolio
+    portfolioData.forEach(item => {
+      const portfolioItemHTML = `
+        <div class="w-full lg:w-1/2">
+          <div class="my-4 md:mx-4 shadow p-6 rounded-md bg-white portfolio-item">
+            <div class="relative mb-6 w-full h-48 bg-purple-200 rounded-md overflow-hidden">
+              <img
+                src="${item.image}"
+                alt="Portfolio Image"
+                class="w-full h-full object-cover object-center"
+              />
+              <div class="absolute opacity-0 transition-opacity duration-200 bg-purple-100 bg-opacity-80 w-full flex items-center justify-center h-full left-0 top-0 image-overlay">
+                <ul class="flex flex-wrap">
+                  <li class="m-2">
+                    <a
+                      href="${item.link}"
+                      target="_blank"
+                      class="w-12 h-10 text-xl text-purple-600 flex items-center justify-center border-2 border-purple-600 rounded hover:text-white hover:bg-purple-600"
+                    >
+                      <i class="fas fa-eye"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <h3 class="text-lg font-medium text-gray-800 mb-2">${item.title}</h3>
+            <p class="text-gray-400">${item.description}</p>
+          </div>
+        </div>
+      `;
+
+      // Insertar cada item en el grid
+      portfolioGrid.innerHTML += portfolioItemHTML;
+    });
+  </script>
+</body>
+</html>

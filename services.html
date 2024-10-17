@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <style>
+    /* Agrega estilos adicionales si es necesario */
+    .service-card {
+      transition: box-shadow 0.3s ease;
+    }
+    .service-card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+    .icon-box {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .icon-box:hover {
+      background-color: #6b46c1;
+      color: white;
+    }
+  </style>
+  
+</head>
+<body class="bg-gray-100">
+  <!-- Navbar -->
+  <nav class="bg-white shadow-lg">
+    <div class="container mx-auto px-4 py-2">
+      <ul class="flex justify-center space-x-4">
+        <li><a href="index.html" class="text-gray-700">About</a></li>
+        <li><a href="services.html" class="text-gray-700">Services</a></li>
+        <li><a href="works.html" class="text-gray-700">Works</a></li>
+        <li><a href="contact.html" class="text-gray-700">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Sección de Servicios -->
+  <section class="container mx-auto py-10">
+    <div class="flex flex-wrap">
+      <!-- Cada servicio será agregado aquí -->
+    </div>
+  </section>
+
+  <script>
+    // Datos de los servicios (basado en tus habilidades y proyectos)
+    const services = [
+      {
+        icon: '<i class="fas fa-laptop-code"></i>',
+        title: "Automatización de Pruebas",
+        description: "Implementación de pruebas automatizadas con Selenium, Cucumber y NUnit en proyectos de software, garantizando calidad y eficiencia."
+      },
+      {
+        icon: '<i class="fas fa-database"></i>',
+        title: "Gestión de Inventarios",
+        description: "Desarrollo de sistemas de gestión de inventarios con UML, aplicando principios de despliegue y corrección de defectos para mejorar la calidad."
+      },
+      {
+        icon: '<i class="fas fa-network-wired"></i>',
+        title: "Desarrollo Full-Stack",
+        description: "Creación de aplicaciones web full-stack con HTML, CSS, React, y Node.js, enfocándome en soluciones escalables y eficientes."
+      },
+      {
+        icon: '<i class="fas fa-book"></i>',
+        title: "Sistemas de Gestión de Bibliotecas",
+        description: "Diseño de sistemas para el manejo de copias de libros, préstamos, devoluciones y multas usando diagramas de clases y secuencias en UML."
+      },
+      {
+        icon: '<i class="fas fa-utensils"></i>',
+        title: "Sistema de Gestión de Pedidos",
+        description: "Desarrollo de diagramas de clases y casos de uso para sistemas que manejan reservas de mesas, pagos y pedidos en restaurantes."
+      },
+      {
+        icon: '<i class="fas fa-swimmer"></i>',
+        title: "Entrenamiento en Natación",
+        description: "Programas de entrenamiento personalizados en estilos libre y dorso, enfocados en mejorar la velocidad y técnica en competencias."
+      }
+    ];
+
+    // Seleccionar el contenedor de la sección de servicios
+    const serviceSection = document.querySelector('.flex.flex-wrap');
+
+    // Generar HTML dinámico
+    services.forEach(service => {
+      const serviceHTML = `
+        <div class="w-full lg:w-1/2 px-4">
+          <div class="my-4 shadow p-6 rounded-md bg-white service-card">
+            <div class="w-16 h-16 flex items-center justify-center rounded-md text-3xl mb-5 bg-purple-100 text-purple-600 icon-box">
+              ${service.icon}
+            </div>
+            <h3 class="text-lg font-medium text-gray-800 mb-2">${service.title}</h3>
+            <p class="text-gray-400">${service.description}</p>
+          </div>
+        </div>
+      `;
+
+      // Insertar el HTML de cada servicio en la sección
+      serviceSection.innerHTML += serviceHTML;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style/styleContact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg">
+        <div class="container mx-auto px-4 py-2">
+            <ul class="flex justify-center space-x-4">
+                <li><a href="index.html" class="text-gray-700">About</a></li>
+                <li><a href="services.html" class="text-gray-700">Services</a></li>
+                <li><a href="works.html" class="text-gray-700">Works</a></li>
+                <li><a href="contact.html" class="text-gray-700">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="contact-section py-10">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-semibold text-gray-800 text-center mb-8">Get in Touch</h2>
+
+            <div class="flex justify-center">
+                <form id="contact-form" class="w-full max-w-lg bg-white shadow-md rounded p-8"
+                    onsubmit="submitForm(event)">
+                    <div class="mb-6">
+                        <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                        <input type="text" id="name" name="name"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+                            required>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                        <input type="email" id="email" name="email"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+                            required>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                        <textarea id="message" name="message" rows="6"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+                            required></textarea>
+                    </div>
+
+                    <div class="flex justify-center">
+                        <button type="submit"
+                            class="bg-purple-600 text-white px-6 py-2 rounded-md hover:bg-purple-700 transition duration-200">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="success-message" class="hidden mt-6 text-center text-green-600 font-medium">
+                Your message has been sent successfully!
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && message) {
+                // Here, you can handle form submission logic like sending data to the server.
+                // For now, we will just display a success message.
+
+                document.getElementById('contact-form').reset(); // Clear the form
+                document.getElementById('success-message').classList.remove('hidden'); // Show success message
+
+                // Optionally, hide the message after a few seconds
+                setTimeout(() => {
+                    document.getElementById('success-message').classList.add('hidden');
+                }, 3000);
+            }
+        }
+    </script>
+
+</body>
+
+</html>
