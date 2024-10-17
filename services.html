@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,19 +12,23 @@
     .service-card {
       transition: box-shadow 0.3s ease;
     }
+
     .service-card:hover {
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     }
+
     .icon-box {
       transition: background-color 0.3s ease, color 0.3s ease;
     }
+
     .icon-box:hover {
       background-color: #6b46c1;
       color: white;
     }
   </style>
-  
+
 </head>
+
 <body class="bg-gray-100">
   <!-- Navbar -->
   <nav class="bg-white shadow-lg">
@@ -31,7 +36,7 @@
       <ul class="flex justify-center space-x-4">
         <li><a href="index.html" class="text-gray-700">About</a></li>
         <li><a href="services.html" class="text-gray-700">Services</a></li>
-        <li><a href="works.html" class="text-gray-700">Works</a></li>
+        <!--<li><a href="works.html" class="text-gray-700">Works</a></li>-->
         <li><a href="contact.html" class="text-gray-700">Contact</a></li>
       </ul>
     </div>
@@ -45,39 +50,40 @@
   </section>
 
   <script>
-    // Datos de los servicios (basado en tus habilidades y proyectos)
+    // Services data (updated based on your skills and projects)
     const services = [
       {
         icon: '<i class="fas fa-laptop-code"></i>',
-        title: "Automatización de Pruebas",
-        description: "Implementación de pruebas automatizadas con Selenium, Cucumber y NUnit en proyectos de software, garantizando calidad y eficiencia."
+        title: "Test Automation",
+        description: "Implementation of automated tests using Selenium, NUnit, and Cucumber in software projects, ensuring quality and efficiency through robust testing strategies."
       },
       {
         icon: '<i class="fas fa-database"></i>',
-        title: "Gestión de Inventarios",
-        description: "Desarrollo de sistemas de gestión de inventarios con UML, aplicando principios de despliegue y corrección de defectos para mejorar la calidad."
+        title: "Inventory Management Systems",
+        description: "Development of inventory management systems using UML and principles of defect correction to enhance software quality and optimize business processes."
       },
       {
         icon: '<i class="fas fa-network-wired"></i>',
-        title: "Desarrollo Full-Stack",
-        description: "Creación de aplicaciones web full-stack con HTML, CSS, React, y Node.js, enfocándome en soluciones escalables y eficientes."
+        title: "Full-Stack Development",
+        description: "Creation of full-stack web applications using Java, Python, HTML, CSS, and JavaScript. Focused on delivering scalable and efficient solutions."
       },
       {
-        icon: '<i class="fas fa-book"></i>',
-        title: "Sistemas de Gestión de Bibliotecas",
-        description: "Diseño de sistemas para el manejo de copias de libros, préstamos, devoluciones y multas usando diagramas de clases y secuencias en UML."
+        icon: '<i class="fas fa-code-branch"></i>',
+        title: "Backend Development",
+        description: "Specializing in backend systems using SQL and Java, ensuring reliable database management and smooth integration with frontend systems."
       },
       {
-        icon: '<i class="fas fa-utensils"></i>',
-        title: "Sistema de Gestión de Pedidos",
-        description: "Desarrollo de diagramas de clases y casos de uso para sistemas que manejan reservas de mesas, pagos y pedidos en restaurantes."
+        icon: '<i class="fas fa-project-diagram"></i>',
+        title: "Library Management Systems",
+        description: "Design and implementation of library management systems, including book loans, returns, and fines, using UML class and sequence diagrams."
       },
       {
-        icon: '<i class="fas fa-swimmer"></i>',
-        title: "Entrenamiento en Natación",
-        description: "Programas de entrenamiento personalizados en estilos libre y dorso, enfocados en mejorar la velocidad y técnica en competencias."
+        icon: '<i class="fas fa-chart-line"></i>',
+        title: "Test-Driven Development",
+        description: "Application of Test-Driven Development (TDD) techniques in C# and Java projects to build reliable and maintainable code with a focus on continuous testing."
       }
     ];
+
 
     // Seleccionar el contenedor de la sección de servicios
     const serviceSection = document.querySelector('.flex.flex-wrap');
@@ -101,4 +107,5 @@
     });
   </script>
 </body>
+
 </html>
